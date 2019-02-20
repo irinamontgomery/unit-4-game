@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
-    var pink = Math.floor(Math.random() * 11);
-    var yellow = Math.floor(Math.random() * 11);
-    var blue = Math.floor(Math.random() * 11);
-    var purple = Math.floor(Math.random() * 11);
+    var pink = Math.floor(Math.random() * 12) + 1;
+    var yellow = Math.floor(Math.random() * 12) + 1;
+    var blue = Math.floor(Math.random() * 12) + 1;
+    var purple = Math.floor(Math.random() * 12) + 1;
     var wins = 0;
     var math = 0;
     var losses = 0;
-    var randomNumber = Math.floor((Math.random() * 16) + 5);
+    var randomNumber = Math.floor((Math.random() * 120) + 19);
 
     $('#randomNumber').html(' ' + randomNumber);
 
@@ -18,25 +18,28 @@ $(document).ready(function () {
     //    }
 
     function reset() {
-        pink = Math.floor(Math.random() * 11);
-        yellow = Math.floor(Math.random() * 11);
-        blue = Math.floor(Math.random() * 11);
-        purple = Math.floor(Math.random() * 11);
-        randomNumber = Math.floor((Math.random() * 16) + 5);
+        pink = Math.floor(Math.random() * 12) + 1;
+        yellow = Math.floor(Math.random() * 12) + 1;
+        blue = Math.floor(Math.random() * 12) + 1;
+        purple = Math.floor(Math.random() * 12) + 1;
+        randomNumber = Math.floor((Math.random() * 120) + 19);
         $('#randomNumber').html(' ' + randomNumber);
         math = 0;
     }
 
     function config(score) {
+
         if (score === randomNumber) {
             wins++;
             $('#wins').html(' ' + wins);
             reset();
-        } else if (score > randomNumber) {
+        }
+        if (score > randomNumber) {
             losses++;
             $('#losses').html(' ' + losses);
             reset();
-        } else {}
+        }
+
         $('#score').html(math);
     }
 
@@ -80,3 +83,4 @@ $(document).ready(function () {
     */
 
 });
+
